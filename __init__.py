@@ -48,6 +48,66 @@ class AmbassadorSkill(MycroftSkill):
 						require("EngineeringSynopsisKeyword").build()
 				self.register_intent(engineering_synopsis_intent, self.handle_engineering_synopsis_intent)
 
+				# ---------------------------------------------------------------------------------
+
+				chemical_engineering_intent = IntentBuilder("ChemicalEngineeringIntent"). \
+						require("ChemicalEngineeringKeyword").build()
+				self.register_intent(chemical_engineering_intent, self.handle_chemical_engineering_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				computer_engineering_intent = IntentBuilder("ComputerEngineeringIntent"). \
+						require("ComputerEngineeringKeyword").build()
+				self.register_intent(computer_engineering_intent, self.handle_computer_engineering_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				civil_engineering_intent = IntentBuilder("CivilEngineeringIntent"). \
+						require("CivilEngineeringKeyword").build()
+				self.register_intent(civil_engineering_intent, self.handle_civil_engineering_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				mechanical_engineering_intent = IntentBuilder("MechanicalEngineeringIntent"). \
+						require("MechanicalEngineeringKeyword").build()
+				self.register_intent(mechanical_engineering_intent, self.handle_mechanical_engineering_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				electrical_engineering_intent = IntentBuilder("ElectricalEngineeringIntent"). \
+						require("ElectricalEngineeringKeyword").build()
+				self.register_intent(electrical_engineering_intent, self.handle_electrical_engineering_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				water_fountain_directions_intent = IntentBuilder("WaterFountainDirectionsIntent"). \
+						require("WaterFountainDirectionsKeyword").build()
+				self.register_intent(water_fountain_directions_intent, self.handle_water_fountain_directions_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				bathroom_directions_intent = IntentBuilder("BathroomDirectionsIntent"). \
+						require("BathroomDirectionsKeyword").build()
+				self.register_intent(bathroom_directions_intent, self.handle_bathroom_directions_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				liberal_arts_synopsis_intent = IntentBuilder("LiberalArtsSynopsisIntent"). \
+						require("LiberalArtsSynopsisKeyword").build()
+				self.register_intent(liberal_arts_synopsis_intent, self.handle_liberal_arts_synopsis_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				vsb_synopsis_intent = IntentBuilder("VSBSynopsisIntent"). \
+						require("VSBSynopsisKeyword").build()
+				self.register_intent(vsb_synopsis_intent, self.handle_vsb_synopsis_intent)
+
+				# ---------------------------------------------------------------------------------
+
+				nursing_synopsis_intent = IntentBuilder("NursingSynopsisIntent"). \
+						require("NursingSynopsisKeyword").build()
+				self.register_intent(nursing_synopsis_intent, self.handle_nursing_synopsis_intent)
+
 		def handle_fun_fact_villanova_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
@@ -129,6 +189,208 @@ class AmbassadorSkill(MycroftSkill):
 					time.sleep(8)
 
 				GPIO.set("GPIO3","Off")
+
+		def handle_chemical_engineering_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("chemical.engineering")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_computer_engineering_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("computer.engineering")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_civil_engineering_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("civil.engineering")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_mechanical_engineering_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("mechanical.engineering")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_electrical_engineering_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("electrical.engineering")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_water_fountain_directions_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("water.fountain.directions")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+
+		def handle_bathroom_directions_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("bathroom.directions")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_liberal_arts_synopsis_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("liberal.arts.synopsis")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_vsb_synopsis_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("vsb.synopsis")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
+		def handle_nursing_synopsis_intent(self, message):
+				GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("nursing.synopsis")
+				time.sleep(1) 									#I put the V eyes here
+				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(8)
+				except:
+					time.sleep(8)
+
+				GPIO.set("GPIO3","Off")
+
 				
 		def stop(self):
 				pass
