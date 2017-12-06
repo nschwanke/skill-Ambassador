@@ -90,7 +90,7 @@ class AmbassadorSkill(MycroftSkill):
 
 				GPIO.set("GPIO3","Off")
 
-			def handle_college_minors_intent(self, message):
+		def handle_college_minors_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
 				GPIO.set("GPIO3","On")
@@ -110,7 +110,7 @@ class AmbassadorSkill(MycroftSkill):
 
 				GPIO.set("GPIO3","Off")
 
-			def handle_engineering_synopsis_intent(self, message):
+		def handle_engineering_synopsis_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
 				GPIO.set("GPIO3","On")
