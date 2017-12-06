@@ -32,6 +32,10 @@ class AmbassadorSkill(MycroftSkill):
 
 				# ---------------------------------------------------------------------------------
 
+				college_majors_intent = IntentBuilder("CollegeMajorsIntent"). \
+						require("CollegeMajorsKeyword").build()
+				self.register_intent(college_majors_intent, self.handle_college_majors_intent)
+
 		def handle_fun_fact_villanova_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
@@ -45,14 +49,44 @@ class AmbassadorSkill(MycroftSkill):
 				#GPIO.set("GPIO4","Off")
 
 				try:
+					start = time.time()
 					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(5)
 				except:
 					time.sleep(5)
 
+				#GPIO.set("GPIO1","Off")
+				GPIO.set("GPIO2","Off")
+				#GPIO.set("GPIO3","Off")
+				GPIO.set("GPIO4","On")
+
+		def handle_college_majors_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
-				GPIO.set("GPIO3","Off")
+				GPIO.set("GPIO3","On")
+				GPIO.set("GPIO4","Off")
+				self.speak_dialog("college.majors")
+				time.sleep(1) 									#I put the V eyes here
+				#GPIO.set("GPIO1","Off")
+				#GPIO.set("GPIO2","Off")
+				#GPIO.set("GPIO3","On")
 				GPIO.set("GPIO4","On")
+
+				try:
+					start = time.time()
+					mycroft.util.wait_while_speaking()
+					end = time.time()
+					if (end - start) < 1:
+						time.sleep(5)
+				except:
+					time.sleep(5)
+
+				#GPIO.set("GPIO1","Off")
+				#GPIO.set("GPIO2","Off")
+				GPIO.set("GPIO3","Off")
+				#GPIO.set("GPIO4","On")
 				
 		def stop(self):
 				pass
