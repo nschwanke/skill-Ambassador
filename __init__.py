@@ -21,23 +21,23 @@ __author__ = 'dlew'
 
 LOGGER = getLogger(__name__)
 
-class Test2Skill(MycroftSkill):
+class AmbassadorSkill(MycroftSkill):
 		def __init__(self):
-				super(Test2Skill, self).__init__(name="Test2Skill")
+				super(AmbassadorSkill, self).__init__(name="AmbassadorSkill")
 
 		def initialize(self):
-				blueberry_intent = IntentBuilder("BlueberryIntent"). \
-						require("BlueberryKeyword").build()
-				self.register_intent(blueberry_intent, self.handle_blueberry_intent)
+				fun_fact_villanova_intent = IntentBuilder("FunFactVillanovaIntent"). \
+						require("FunFactVillanovaKeyword").build()
+				self.register_intent(fun_fact_villanova_intent, self.handle_fun_fact_villanova_intent)
 
 				# ---------------------------------------------------------------------------------
 
-		def handle_blueberry_intent(self, message):
+		def handle_fun_fact_villanova_intent(self, message):
 				GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","Off")
 				GPIO.set("GPIO3","On")
 				GPIO.set("GPIO4","Off")
-				self.speak_dialog("blueberry")
+				self.speak_dialog("fun.fact.villanova")
 				time.sleep(1) 									#I put the V eyes here
 				#GPIO.set("GPIO1","Off")
 				GPIO.set("GPIO2","On")
@@ -58,4 +58,4 @@ class Test2Skill(MycroftSkill):
 				pass
 
 def create_skill():
-		return Test2Skill()
+		return AmbassadorSkill()
